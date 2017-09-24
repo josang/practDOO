@@ -1,0 +1,16 @@
+language: java
+jdk:
+- oraclejdk8
+branches:
+  only:
+  - master
+  - develop
+notifications:
+  email:
+    recipients:
+    - githubmiw@gmail.com
+script:
+#Test unitario y de integracion en develop
+- mvn clean verify --settings settings.xml
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent verify --settings settings.xml
+- mvn sonar:sonar -Dsonar.organization=josang-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$miw --settings settings.xml
