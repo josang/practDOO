@@ -14,14 +14,17 @@ public class FeedbackView {
     }
     
     public void show() {
-        
         if ( codeGuessController.secretCodeDiscovered()) {
             io.write( "Has acertado el código secreto!!! Victoria");
-        }else if ( codeGuessController.noMoreAttempts()) {
-            io.write( "Se han acabado los intentos. Has perdido");
-        }else {
+        }else { 
+            
             io.write(codeGuessController.numberDeaths() + " muertos");
             io.write(" y " + codeGuessController.numberInjured() + " heridos");
+            
+            if ( codeGuessController.noMoreAttempts()) {
+                io.writeln();
+                io.write( "Se han acabado los intentos. Has perdido");
+            }
         }
         
         io.writeln();
