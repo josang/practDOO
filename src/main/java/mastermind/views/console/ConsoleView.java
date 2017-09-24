@@ -40,8 +40,8 @@ public class ConsoleView implements View {
     }
 
     @Override
-    public void visit(CodeGuessController codeAttemptController) {
-        gameView.interact(codeAttemptController);
+    public void visit(CodeGuessController codeGuessController) {
+        gameView.interact(codeGuessController);
     }
 
     @Override

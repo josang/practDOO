@@ -8,32 +8,32 @@ import mastermind.models.Code;
 
 class CodeGuessView implements CodeGuessControllerVisitor{
     
-    private CodeGuessController codeAttemptController;
+    private CodeGuessController codeGuessController;
     
     private Code code;
     
     private String title;
 
-    CodeGuessView(CodeGuessController codeAttemptController){
-        assert codeAttemptController != null;
-        this.codeAttemptController = codeAttemptController;
+    CodeGuessView(CodeGuessController codeGuessController){
+        assert codeGuessController != null;
+        this.codeGuessController = codeGuessController;
     }
     
     Code getGuessCode() {
-        this.code = this.codeAttemptController.getGuessCode();
-        title = "Intento " + this.codeAttemptController.attempt() + " [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul, B-blanco, N-negro] ";
-        this.codeAttemptController.accept(this);
+        this.code = this.codeGuessController.getGuessCode();
+        title = "Intento " + this.codeGuessController.attempt() + " [ " + this.code.getNumberElements() + " letras de entre A-amarillo, R-rojo, V-verde, Z-azul, B-blanco, N-negro] ";
+        this.codeGuessController.accept(this);
         return code;
     }
     
     @Override
-    public void visit(LocalUserCodeGuessController userCodeAttemptController) {
+    public void visit(LocalUserCodeGuessController usercodeGuessController) {
         String userCode = new CodeView( this.title ).read().toUpperCase();
         this.code.setCodeFromString( userCode );          
     }
     
     @Override
-    public void visit(LocalDemoCodeGuessController demoCodeAttemptController) {
+    public void visit(LocalDemoCodeGuessController democodeGuessController) {
         new CodeView( this.title ).write( this.code );
     }
 

@@ -16,16 +16,16 @@ class GameView {
     }
 
     private void guessCode(CodeGuessController codeGuessController, CodeGuessView codeGuessView) {
-        Code attemptCode;
+        Code guessCode;
         Error error = null;
         do {
-            attemptCode = codeGuessView.getGuessCode();
-            error = codeGuessController.validateCode(attemptCode);
+            guessCode = codeGuessView.getGuessCode();
+            error = codeGuessController.validateCode(guessCode);
             if (error != null) {
                 io.writeln("" + error);
             }
         } while (error != null);
-        codeGuessController.attemptCode(attemptCode);
+        codeGuessController.guessCode(guessCode);
     }
 
     private void showFeedback(CodeGuessController codeGuessController) {

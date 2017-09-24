@@ -4,7 +4,7 @@ import mastermind.models.Code;
 
 public interface CodeGuessController extends OperationController{
 
-    void attemptCode(Code code);
+    void guessCode(Code code);
     
     int attempt();
     

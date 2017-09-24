@@ -4,7 +4,7 @@ public class Feedback {
     
     private int deaths;
     private int injured;
-    private boolean[] codeCheck;
+    private boolean[] secretCodeCheck;
     
     private Code secretCode;
     private Code guessCode;
@@ -27,9 +27,9 @@ public class Feedback {
         this.deaths = 0;
         this.injured = 0;
         
-        this.codeCheck = new boolean[this.secretCode.getNumberElements()];
+        this.secretCodeCheck = new boolean[this.secretCode.getNumberElements()];
         for (int i = 0; i < this.secretCode.getNumberElements(); i++) {
-            this.codeCheck[i] = false;
+            this.secretCodeCheck[i] = false;
         }
         
         this.calculateDeaths();
@@ -41,19 +41,19 @@ public class Feedback {
         for (int i = 0; i < this.secretCode.getNumberElements(); i++) {
             if (secretCode.getElement(i) == guessCode.getElement(i)) {
                 this.deaths++;
-                this.codeCheck[i] = true;
+                this.secretCodeCheck[i] = true;
             }
         }
     }
     
     private void calculateInjured() {
         for (int i = 0; i < this.secretCode.getNumberElements(); i++) {
-            if (!this.codeCheck[i]) {
+            if (this.secretCode.getElement(i) != this.guessCode.getElement(i)) {
                 int j = 0;
                 while (j < this.secretCode.getNumberElements()) {
-                    if (secretCode.getElement(j) == guessCode.getElement(i) && !this.codeCheck[j]) {
+                    if (secretCode.getElement(j) == guessCode.getElement(i) && !this.secretCodeCheck[j]) {
                         this.injured++;
-                        this.codeCheck[j] = true;
+                        this.secretCodeCheck[j] = true;
                         j = this.secretCode.getNumberElements();
                     }
                     j++;

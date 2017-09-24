@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $HOME/.m2/settings.xml We set 3 profiles: develop, preproduction and production 
-	To check active profiles, in a project folder we run mvn help:active-profiles 
+<!-- $HOME/.m2/settings.xml We set 3 profiles: develop, preproduction and 
+	production To check active profiles, in a project folder we run mvn help:active-profiles 
 	Now in our pom.xml we can add profiles with their own properties like database 
 	settings -->
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -11,7 +11,8 @@
 		<profile>
 			<id>develop</id>
 			<activation>
-				<!-- develop is active by default, so doing 'mvn install' will apply this -->
+				<!-- develop is active by default, so doing 'mvn install' will apply 
+					this -->
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>

@@ -67,7 +67,7 @@ public class Game {
     }
 
     public boolean noMoreAttempts() {
-        return this.attempt() >= Game.MAX_ATTEMPTS;
+        return this.attempt() > MAX_ATTEMPTS;
     }
 
 }

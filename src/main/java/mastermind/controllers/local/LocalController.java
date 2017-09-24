@@ -22,13 +22,12 @@ public abstract class LocalController {
         game.setState(state);
     }
 
-    public void attemptCode(Code code) {
+    public void guessCode(Code code) {
         assert code != null;
         this.game.processFeedback(code);
+        this.game.increaseAttemptCount();
         if (game.finished()) {
             game.setState(State.FINAL);
-        } else {
-            game.increaseAttemptCount();
         }
     }
 

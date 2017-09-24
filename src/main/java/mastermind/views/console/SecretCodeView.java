@@ -10,7 +10,7 @@ public class SecretCodeView {
         IO io = new IO();
         
         secretCodeController.createSecretCode();
-        io.writeln("Secreto: " + secretCodeController.secretCode().toString() );
+        io.writeln("Se ha creado un código secreto. Intente adivinarlo." );
     }
 
 }
