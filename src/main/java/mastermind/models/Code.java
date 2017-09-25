@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Code {
 
-    private static final int NUMBER_ELEMENTS = 2;
+    private static final int NUMBER_ELEMENTS = 4;
 
     private Color[] elements;
 
