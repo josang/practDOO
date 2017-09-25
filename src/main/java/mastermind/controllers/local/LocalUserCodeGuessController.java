@@ -12,8 +12,8 @@ public class LocalUserCodeGuessController extends LocalCodeGuessController imple
     }
 
     @Override
-    public void accept(CodeGuessControllerVisitor colocateControllerVisitor) {
-        colocateControllerVisitor.visit(this);
+    public void accept(CodeGuessControllerVisitor codeGuessControllerVisitor) {
+        codeGuessControllerVisitor.visit(this);
     }
 
     @Override

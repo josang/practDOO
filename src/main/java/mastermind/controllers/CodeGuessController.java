@@ -20,6 +20,6 @@ public interface CodeGuessController extends OperationController{
 
     int numberDeaths();
 
-    void accept(CodeGuessControllerVisitor colocateControllerVisitor);
+    void accept(CodeGuessControllerVisitor codeGuessControllerVisitor);
 
 }

@@ -8,18 +8,18 @@ import mastermind.utils.ClosedInterval;
 
 public class LocalStartController extends LocalOperationController implements StartController {
 
-    private LocalCodeGuessControllerBuilder colocateControllerBuilder;
+    private LocalCodeGuessControllerBuilder localCodeGuessControllerBuilder;
 
-    LocalStartController(Game game, LocalCodeGuessControllerBuilder colocateControllerBuilder) {
+    LocalStartController(Game game, LocalCodeGuessControllerBuilder localCodeGuessControllerBuilder) {
         super(game);
-        assert colocateControllerBuilder != null;
-        this.colocateControllerBuilder = colocateControllerBuilder;
+        assert localCodeGuessControllerBuilder != null;
+        this.localCodeGuessControllerBuilder = localCodeGuessControllerBuilder;
     }
 
     public void start(int option) {
         assert new ClosedInterval(1, this.gameOptions().length).includes(option);
         assert this.getState() == State.INITIAL;
-        colocateControllerBuilder.build(option);
+        localCodeGuessControllerBuilder.build(option);
         this.setState(State.SECRET_CODE);
     }
 
