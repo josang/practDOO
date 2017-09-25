@@ -1,11 +1,11 @@
 package mastermind.controllers.local;
 
 import mastermind.controllers.CodeGuessControllerVisitor;
-import mastermind.controllers.DemoCodeAttemptController;
+import mastermind.controllers.DemoCodeGuessController;
 import mastermind.models.Code;
 import mastermind.models.Game;
 
-public class LocalDemoCodeGuessController extends LocalCodeGuessController implements DemoCodeAttemptController {
+public class LocalDemoCodeGuessController extends LocalCodeGuessController implements DemoCodeGuessController {
 
     public LocalDemoCodeGuessController(Game game) {
         super(game);

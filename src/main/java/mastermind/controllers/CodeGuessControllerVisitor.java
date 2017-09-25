@@ -5,7 +5,7 @@ import mastermind.controllers.local.LocalUserCodeGuessController;
 
 public interface CodeGuessControllerVisitor {
 
-    void visit(LocalDemoCodeGuessController localDemoCodeAttemptController);
+    void visit(LocalDemoCodeGuessController localDemoCodeGuessController);
 
-    void visit(LocalUserCodeGuessController userCodeAttemptController);
+    void visit(LocalUserCodeGuessController userCodeGuessController);
 }

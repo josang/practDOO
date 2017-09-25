@@ -6,7 +6,7 @@ public interface OperationControllerVisitor {
 	
 	void visit(SecretCodeController secretCodeController);
 	
-	void visit(CodeGuessController codeAttemptController);
+	void visit(CodeGuessController codeGuessController);
 	
 	void visit(ContinueController continueController);
 
